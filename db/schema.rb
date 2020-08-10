@@ -27,18 +27,6 @@ ActiveRecord::Schema.define(version: 2020_08_07_033525) do
     t.index ["spell_id", "book_id"], name: "index_books_spells_on_spell_id_and_book_id", unique: true
   end
 
-  create_table "sclasses", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "sclasses_spells", id: false, force: :cascade do |t|
-    t.bigint "spell_id", null: false
-    t.bigint "sclass_id", null: false
-    t.index ["sclass_id", "spell_id"], name: "index_sclasses_spells_on_sclass_id_and_spell_id", unique: true
-  end
-
   create_table "spells", force: :cascade do |t|
     t.string "name", limit: 70, null: false
     t.integer "level", null: false
@@ -51,6 +39,4 @@ ActiveRecord::Schema.define(version: 2020_08_07_033525) do
 
   add_foreign_key "books_spells", "books"
   add_foreign_key "books_spells", "spells"
-  add_foreign_key "sclasses_spells", "sclasses"
-  add_foreign_key "sclasses_spells", "spells"
 end
