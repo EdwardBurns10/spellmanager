@@ -5,6 +5,17 @@ application up and running.
 
 Things you may want to cover:
 
+
+  get 'books/index'
+  get 'books/create'
+  get 'books/new'
+  get 'books/edit'
+  get 'books/show'
+  get 'books/update'
+  get 'books/destroy'
+  
+  edit for books -- edit spells?      
+
 * Ruby version
 
 * System dependencies

@@ -6,4 +6,20 @@ class Spell < ApplicationRecord
     validates_presence_of :school
     validates_presence_of :concentration
     validates_length_of :description, maximum: 4096
+    
+    def self.order_by field
+      return Spell.order(:level, :name)
+    end
+    
+=begin
+    def self.order_by field
+        Spell.order(:level)
+        for i in 0..10
+            while :level == i
+                Spell.order(:name)
+            end
+        end
+    end
+=end
+    
 end
