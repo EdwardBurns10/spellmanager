@@ -6,9 +6,21 @@
   <%= @book.name %>
 </p>
 
+<% @book.spells.each do |spell| %>
+      <tr>
+        <td><%= link_to "#{spell.name}", spell %></td>
+        <td><%= link_to 'Edit', edit_spell_path(spell) %></td>
+        <td><%= form_with model: spell, method: :delete, local: true do |f| %>
+            <%= f.submit 'Remove spell' %>
+            <% end %>
+        </td>
+      </tr>
+    <% end %>
 
 <p>
 <%= link_to 'Edit Book', edit_book_path(@book) %> |
 <%= link_to 'Show Books', books_path %> |
 <%= link_to "Home", root_path %>    
 </p>
+
+

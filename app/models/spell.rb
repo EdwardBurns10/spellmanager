@@ -13,12 +13,7 @@ class Spell < ApplicationRecord
     
 =begin
     def self.order_by field
-        Spell.order(:level)
-        for i in 0..10
-            while :level == i
-                Spell.order(:name)
-            end
-        end
+        return @spells.sort_by {|x| [x.level, x.name] }
     end
 =end
     

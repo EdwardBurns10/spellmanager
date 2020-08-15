@@ -3,6 +3,15 @@
 <%= render 'form', spell: @spell %>
 
 <p>
+<%= form_with model: @spell, method: :delete, local: true do |f| %>
+  <%= f.submit 'Delete spell' %>
+  <% end %>
+</p>
+
+<p>
 <%= link_to 'Show Spells', spells_path %> |
 <%= link_to 'Home', root_path %> 
 </p>
+
+
+ 
