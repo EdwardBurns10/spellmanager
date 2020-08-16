@@ -1,6 +1,7 @@
 class Spell < ApplicationRecord
     has_and_belongs_to_many :books, dependent: :destroy
     validates_presence_of :name
+    validates_uniqueness_of :name, case_sensitive: false
     validates_length_of :name, maximum: 70 
     validates_presence_of :level
     validates_presence_of :school
